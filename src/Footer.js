@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Button, Modal, Typography} from "@mui/material";
+import {Box, Button, Modal} from "@mui/material";
 
 class Footer extends React.Component {
     render(){
