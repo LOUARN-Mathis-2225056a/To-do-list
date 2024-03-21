@@ -54,8 +54,8 @@ class TodoApp extends React.Component {
                                        onChange={() => this.checkATask(index)}/>
                                 <span className={item.isChecked ? "isChecked" : ""}>{item.title}</span>
 
-                                <button className="order" onClick={() => this.moveItemUp(index)}>Up</button>
-                                <button className="order" onClick={() => this.moveItemDown(index)}>Down</button>
+                                <button className="order" onClick={() => this.moveItemUp(index)}>↑</button>
+                                <button className="order" onClick={() => this.moveItemDown(index)}>↓</button>
 
                             </li>
                         ))}

@@ -13,6 +13,7 @@ body {
 
 .taskList {
   margin-top: 20px;
+  margin-left: 2vh;
 }
 
 .taskList h2 {
@@ -26,15 +27,18 @@ body {
 
 .taskList li {
   margin-bottom: 10px;
+  margin-left: 2vh;
 }
 
 .taskList li .delete {
-  background-color: #ff4500; /* Rouge pour le bouton de suppression */
-  color: #fff;
+  background-color: darkorange;
+  color: black;
   border: none;
+  border-radius: 5px;
   padding: 5px 10px;
   margin-right: 10px;
   cursor: pointer;
+  opacity: 50%;
 }
 
 .taskList li input[type="checkbox"] {
@@ -114,5 +118,13 @@ footer button {
   color: darkorange;
   background-color: inherit;
   border: none;
+  cursor: pointer;
+}
+
+.order{
+  color: darkorange;
+  background-color: inherit;
+  border: none;
+  margin-left: 1vh;
   cursor: pointer;
 }
