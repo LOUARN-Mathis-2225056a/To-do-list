@@ -1,32 +1,118 @@
-.App {
-  text-align: center;
+body {
+  background-color: #333; /* Gris foncé pour le fond */
+  color: #fff; /* Texte blanc */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.completedTask {
+  background-color: #222; /* Fond légèrement plus foncé pour l'en-tête */
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.taskList {
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.taskList h2 {
+  color: #ff8c00; /* Orange pour le titre de la liste des tâches */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.taskList ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.taskList li {
+  margin-bottom: 10px;
+}
+
+.taskList li .delete {
+  background-color: #ff4500; /* Rouge pour le bouton de suppression */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.taskList li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.taskList li span.isChecked {
+  text-decoration: line-through; /* Style pour les tâches cochées */
+  color: #555; /* Couleur du texte pour les tâches cochées */
+}
+
+.searchTask {
+  margin-bottom: 20px;
+}
+
+.searchTask input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  background-color: #555; /* Gris plus foncé pour le champ de recherche */
+  color: #fff;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222; /* Fond légèrement plus foncé pour le pied de page */
+  padding: 20px;
+}
+
+footer button {
+  background-color: #ff8c00; /* Orange pour les boutons dans le pied de page */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modalContent {
+  background-color: #222; /* Fond légèrement plus foncé pour la modal */
+  padding: 20px;
+}
+
+.modalContent h2 {
+  color: #ff8c00; /* Orange pour le titre de la modal */
+}
+
+.modalContent input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modalContent button {
+  background-color: #ff8c00; /* Orange pour le bouton d'ajout dans la modal */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#taskInput{
+  border: none;
+  background-color: inherit;
+  color: #ff8c00;
+  outline: none;
+  border-bottom: solid #ff8c00 1px;
+}
+
+#addTaskButton{
+  margin-left: 5vh;
+  color: darkorange;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
-import {Box, Button, Modal, Typography} from "@mui/material";
+import Header from './Header'
+import Footer from './Footer'
 
 class TodoApp extends React.Component {
     style = {
@@ -9,7 +10,7 @@ class TodoApp extends React.Component {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
-        bgcolor: 'background.paper',
+        bgcolor: '555555FF',
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
@@ -41,10 +42,7 @@ class TodoApp extends React.Component {
 
         return (
             <div>
-                <header className="completedTask">
-                    <label>{this.state.items.filter(item => item.isChecked === true).length} tâches réalisées
-                        sur {this.state.items.length}.</label> <br></br>
-                </header>
+                <Header totalTask = {this.state.items.length} completedTask={this.state.items.filter(item => item.isChecked === true).length}/>
                 <div className="taskList">
                     <h2>Liste des taches</h2>
                     <ol>
@@ -63,29 +61,14 @@ class TodoApp extends React.Component {
                         ))}
                     </ol>
                 </div>
-                <footer>
-                    <div className="searchTask">
-                        <input value={this.state.taskToSearch} onChange={this.filterTask} placeholder="chercher une tache"/>
-                    </div>
-                    <div>
-                        <Button onClick={this.openModal}>Ajouter une tache</Button>
-                        <Modal
-                            open={this.state.open}
-                            onClose={this.closeModal}
-                            aria-labelledby="modal-modal-title"
-                            aria-describedby="modal-modal-description"
-                        >
-
-                            <Box sx={this.style}>
-                                <Typography id="modal-modal-title" variant="h6" component="h2">
-                                    Tache a ajouter
-                                </Typography>
-                                <input onChange={this.addTaskTitle}></input>
-                                <button onClick={this.addTask}>+</button>
-                            </Box>
-                        </Modal>
-                    </div>
-                </footer>
+                <Footer taskToSearch={this.state.taskToSearch}
+                        filterTask={this.filterTask}
+                        openModal={this.openModal}
+                        open={this.state.open}
+                        closeModal={this.closeModal}
+                        style={this.style}
+                        addTaskTitle={this.addTaskTitle}
+                        addTask={this.addTask}/>
             </div>
         )
     }
