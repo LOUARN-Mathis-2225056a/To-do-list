@@ -128,3 +128,10 @@ footer button {
   margin-left: 1vh;
   cursor: pointer;
 }
+
+.saveTask{
+  border: none;
+  color: darkorange;
+  background-color: inherit;
+  cursor: pointer;
+}
