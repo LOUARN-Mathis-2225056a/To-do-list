@@ -15,8 +15,6 @@ class TodoApp extends React.Component {
         boxShadow: 24,
         p: 4,
     };
-    openModal = () => this.setState({open: true});
-    closeModal = () => this.setState({open: false});
     constructor(props) {
         super(props)
 
@@ -42,8 +40,11 @@ class TodoApp extends React.Component {
 
         return (
             <div>
-                <Header totalTask = {this.state.items.length} completedTask={this.state.items.filter(item => item.isChecked === true).length}/>
+                <Header totalTask = {this.state.items.length}
+                        completedTask={this.state.items.filter(item => item.isChecked === true).length}
+                        saveTask={this.saveTask}/>
                 <div className="taskList">
+                    <button className="saveTask" onClick={() => this.saveTask()}>Sauvegarder les taches</button>
                     <h2>Liste des taches</h2>
                     <ol>
                         {filteredItems.map((item, index) => (
@@ -72,6 +73,9 @@ class TodoApp extends React.Component {
             </div>
         )
     }
+
+    openModal = () => this.setState({open: true});
+    closeModal = () => this.setState({open: false});
 
     moveItemUp = (index) => {
         if (index > 0) {
@@ -112,6 +116,7 @@ class TodoApp extends React.Component {
             const updatedItems = [...this.state.items];
             updatedItems.splice(index, 1);
             this.setState({ items: updatedItems });
+            localStorage.removeItem(index);
         }
     }
 
@@ -119,6 +124,10 @@ class TodoApp extends React.Component {
         this.setState(previousState => ({
             items : [...previousState.items,{title : this.state.inputTask, isChecked:false}]
         }));
+    }
+
+    saveTask(){
+        this.state.items.map((item, index) => (localStorage.setItem(index, item)))
     }
 
     filterTask(event){
